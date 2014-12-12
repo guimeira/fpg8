@@ -32,7 +32,7 @@ There is also a program that writes "Thank You!" on the screen, that I used in t
 ### Docs
 Under the **docs** folder there are the slides I used for the presentation of this project.
 
-There is also the project report that describes the implementation in details. Section 2 of the report summarizes all the information I could found about the Chip-8 on the web and can be used as a documentation for your own implementation.
+There is also the project report that describes the implementation in details. Section 2 of the report summarizes all the information I could find about the Chip-8 on the web and can be used as a documentation for your own implementation.
 
 ### Miscelaneous
 Under the **misc** folder you can find a OpenOffice Calc spreadsheet that I created to help me drawing the font for the "Thank You" program.
