@@ -33,7 +33,7 @@ module dac_controller(
 	end
 	
 	//Next state logic for the main state machine:
-	always @(write,counter) begin
+	always @(current_state,write,counter) begin
 		case(current_state)
 			STATE_IDLE: begin
 				//If we are idle and someone wants to start a transmission:
@@ -55,6 +55,7 @@ module dac_controller(
 					next_state = STATE_TRANSMITTING;
 				end
 			end
+			default: next_state = current_state; //avoid latches
 		endcase
 	end
 	

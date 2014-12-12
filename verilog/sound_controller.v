@@ -18,10 +18,12 @@ module sound_controller(
 	//DAC controller instantiation:
 	wire[7:0] data;
 	wire write;
+	wire busy;
 	dac_controller dac(
 		.clk(clk),
 		.rst(rst),
 		.data(data),
+		.busy(busy),
 		.write(write),
 		.dac_clk(dac_clk),
 		.dac_sync(dac_sync),
@@ -34,14 +36,14 @@ module sound_controller(
 	parameter[11:0] FREQUENCY_COUNTER = 2272;
 	always @(posedge clk, posedge rst) begin
 		if(rst) begin
-			counter <= 18'd0;
+			counter <= 12'd0;
 		end
 		else begin
 			if(counter < FREQUENCY_COUNTER) begin
-				counter <= counter + 18'd1;
+				counter <= counter + 12'd1;
 			end
 			else begin
-				counter <= 18'd0;
+				counter <= 12'd0;
 			end
 		end
 	end

@@ -152,9 +152,6 @@ end
 
 //Sound controller instantiation:
 wire sound;
-wire dac_clk;
-wire dac_sync;
-wire dac_data;
 sound_controller sound_control(
 	.clk(clk_100mhz),
 	.rst(rst),
@@ -187,6 +184,7 @@ wire [7:0] debug_reg_val;
 assign gpi1[9:2] = debug_reg_val;
 wire[15:0] debug_current_i;
 assign gpi1[26:10] = debug_current_i;
+assign gpi1[31:27] = 0;
 chip8_core core(
 	.clk_100mhz(clk_100mhz),
 	.rst(rst),
